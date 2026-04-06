@@ -1,0 +1,182 @@
+/**
+ * Tema BATMOTOR em cima do Bootstrap 5.
+ *
+ * Regra de ouro deste projeto: tudo que DER para fazer com classes Bootstrap
+ * (grid, spacing, botões, formulários, alertas, progress), faça no JSX.
+ * Este arquivo só guarda a identidade visual (cores da marca) e 2–3 toques
+ * que não têm classe pronta (degradê do painel, cartão do formulário).
+ */
+:root,
+[data-bs-theme='light'] {
+  --bs-primary: #2b50aa;
+  --bs-primary-rgb: 43, 80, 170;
+  --bs-link-color: #2b50aa;
+  --bs-link-hover-color: #1a3158;
+  --bs-body-color: #1a3158;
+  --bs-border-radius-xl: 1.25rem;
+  --bm-accent-yellow: #f7e018;
+  --bm-form-card-bg: #d1e3f8;
+  --bm-hero-gradient-start: #eaf2fb;
+  --bm-hero-gradient-end: #dfeaf8;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/** Painel esquerdo (boas-vindas + ilustração): degradê da marca */
+.bm-auth-hero-panel {
+  background: linear-gradient(
+    160deg,
+    var(--bm-hero-gradient-start) 0%,
+    var(--bm-hero-gradient-end) 100%
+  );
+}
+
+/** Cartão do formulário — cor exata do layout BATMOTOR */
+.bm-auth-form-card {
+  background-color: var(--bm-form-card-bg);
+  max-width: 26.25rem;
+}
+
+/** Títulos “editoriais” do painel (login): serifada do Google Fonts */
+.bm-font-serif {
+  font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+}
+
+/** Ilustração isométrica: limita largura sem inventar grid novo */
+.bm-hero-img {
+  width: min(100%, 32.5rem);
+  height: auto;
+  object-fit: contain;
+}
+
+/** Placeholders no estilo do layout original (rótulos em caixa alta) */
+.bm-auth-form-card .form-control::placeholder {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--bs-secondary-color);
+}
+
+/** Gaveta de navegação (Offcanvas) — largura confortável em mobile e desktop */
+.bm-nav-drawer {
+  --bs-offcanvas-width: min(20rem, 92vw);
+}
+
+/** Página de inscrição de currículo */
+.bm-cv-form-card-header {
+  background: linear-gradient(135deg, var(--bs-primary) 0%, #1e3f80 100%);
+}
+
+.bm-cv-icon-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.bm-cv-align-grid {
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+}
+
+.bm-cv-sheet {
+  border-top: 4px solid var(--bs-primary);
+  box-shadow:
+    0 0.5rem 1.5rem rgba(var(--bs-primary-rgb), 0.12),
+    0 0.125rem 0.25rem rgba(0, 0, 0, 0.06);
+}
+
+.bm-cv-photo-placeholder-icon {
+  font-size: 3rem;
+}
+
+/** Home — carrosséis e cards */
+.bm-home-banner-slide {
+  min-height: 11rem;
+}
+
+@media (min-width: 768px) {
+  .bm-home-banner-slide {
+    min-height: 12.5rem;
+  }
+}
+
+.bm-home-banner-icon {
+  font-size: clamp(3rem, 10vw, 4.25rem);
+  line-height: 1;
+  opacity: 0.92;
+  flex-shrink: 0;
+}
+
+.bm-home-slide-accent {
+  background: linear-gradient(135deg, #153570 0%, var(--bs-primary) 55%, #3d6acb 100%);
+}
+
+.bm-home-feature-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.bm-home-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.65rem 1.35rem rgba(var(--bs-primary-rgb), 0.14) !important;
+}
+
+/** Quiz — atividade de aula */
+.bm-quiz-question-card {
+  border-top: 3px solid var(--bs-primary);
+}
+
+.bm-quiz-hud {
+  z-index: 1;
+}
+
+/** Sala Codar */
+.codar-editor:focus {
+  box-shadow: none;
+  outline: 2px solid rgba(var(--bs-primary-rgb), 0.35);
+  outline-offset: -2px;
+}
+
+.codar-console {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.scroll-margin-top {
+  scroll-margin-top: 5.5rem;
+}
+
+/** Impressão do currículo: só a folha do CV (prática de sala) */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  body.bm-printing-cv * {
+    visibility: hidden;
+  }
+
+  body.bm-printing-cv .bm-cv-print-area,
+  body.bm-printing-cv .bm-cv-print-area * {
+    visibility: visible;
+  }
+
+  body.bm-printing-cv .bm-cv-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

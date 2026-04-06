@@ -1,0 +1,145 @@
+/* Jokenpo — layout espelhado do projeto HTML original (ajustes de tipografia e seletores). */
+
+.jokenpo-page {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.jokenpo-page,
+.jokenpo-page button {
+  cursor: default;
+}
+
+.jokenpo-page #jogador .jokenpo-choice {
+  cursor: pointer;
+}
+
+.jokenpo-page #computador .jokenpo-choice {
+  cursor: default;
+}
+
+.jokenpo-page #titulo {
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin: 0;
+  padding: 20px;
+}
+
+.jokenpo-page #placar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.jokenpo-page #jogador,
+.jokenpo-page #computador {
+  position: relative;
+  flex-grow: 1;
+  min-width: 260px;
+  border-radius: 5px;
+  color: #fff;
+  padding: 20px;
+}
+
+.jokenpo-page #jogador h2,
+.jokenpo-page #computador h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.jokenpo-page #jogador {
+  background-color: #ff3333;
+}
+
+.jokenpo-page #jogador-nome,
+.jokenpo-page #computador-nome {
+  font-size: 24px;
+}
+
+.jokenpo-page #computador-nome {
+  text-align: right;
+}
+
+.jokenpo-page #jogador-pontos,
+.jokenpo-page #computador-pontos {
+  position: absolute;
+  top: 8px;
+  font-size: 52px;
+  line-height: 1;
+}
+
+.jokenpo-page #jogador-pontos {
+  right: 20px;
+}
+
+.jokenpo-page #jogador #jogador-escolha,
+.jokenpo-page #computador #computador-escolha {
+  list-style-type: none;
+  text-align: center;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.jokenpo-page #jogador #jogador-escolha li,
+.jokenpo-page #computador #computador-escolha li {
+  display: inline;
+  padding: 0 15px;
+}
+
+.jokenpo-page #jogador #jogador-escolha .jokenpo-choice,
+.jokenpo-page #computador #computador-escolha .jokenpo-choice {
+  opacity: 0.2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border: none;
+  background: transparent;
+  padding: 0;
+  line-height: 1;
+}
+
+.jokenpo-page #jogador #jogador-escolha .jokenpo-choice:hover:not(:disabled),
+.jokenpo-page #jogador #jogador-escolha .jokenpo-choice.selecionado,
+.jokenpo-page #computador #computador-escolha .jokenpo-choice.selecionado {
+  opacity: 0.9;
+}
+
+.jokenpo-page #jogador #jogador-escolha .jokenpo-choice:disabled {
+  opacity: 0.35;
+  cursor: wait;
+}
+
+.jokenpo-page .jokenpo-emoji {
+  font-size: 4rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.jokenpo-page #computador {
+  background-color: #33adff;
+}
+
+.jokenpo-page #versus {
+  font-size: clamp(2rem, 8vw, 5rem);
+  padding: 0 32px;
+  font-weight: 700;
+  color: #333;
+}
+
+.jokenpo-page #mensagem {
+  background-color: #575a5c;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

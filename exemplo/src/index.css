@@ -1,0 +1,31 @@
+/**
+ * Ajustes globais leves. O “peso” visual vem do Bootstrap + `batmotor-theme.css`.
+ */
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: 100svh;
+  text-align: initial;
+  border: none;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+  background-color: var(--bs-secondary-bg);
+}
